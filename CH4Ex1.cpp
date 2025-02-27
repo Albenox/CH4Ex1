@@ -14,6 +14,7 @@ int main()
     double number1;
     double number2;
     double smallNumber;
+    double largerNumber;
     bool equal;
 
     cout << "Input a number" << endl;
@@ -21,11 +22,11 @@ int main()
     cout << "Input a second number" << endl;
     cin >> number2;
 
-    smallNumber = number1 < number2 ? number1 : number2;
     equal = number1 == number2 ? 1 : 0;
+    number1 < number2 ? (smallNumber = number1, largerNumber = number2) : (smallNumber = number2, largerNumber = number1);
 
     if (equal == 0) {
-        cout << "Of the numbers inputed, " << smallNumber << " was the smaller number between " << number1 << " and " << number2;
+        cout << "Of the numbers inputed, " << smallNumber << " was the smaller number, and " << largerNumber << " was the larger number.";
     }
     else {
         cout << "Of the numbers inputed, " << number1 << " is equal to " << number2 << ".";
